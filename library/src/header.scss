@@ -1,0 +1,13 @@
+@import "variables";
+
+.bg__header{
+    background-color: $color-dark;
+}
+
+.inner__header{
+    padding: 0 20px;
+}
+
+.header__logo{
+    @include textStyle($main-font, $logo, 50px, 400, $color-white);
+}

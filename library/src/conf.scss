@@ -23,3 +23,21 @@ li {
 a {
     text-decoration: none;
 }
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.inner{
+    max-width: 1440px;
+    margin: 0 auto;
+}

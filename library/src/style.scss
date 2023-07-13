@@ -1,6 +1,4 @@
 @import "conf";
 @import "variables";
+@import "header";
 
-h1{
-    @include textStyle($secont-font, $h1, 1.5rem, 700, $primary-color);
-}
