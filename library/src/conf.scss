@@ -1,3 +1,4 @@
+@import "variables";
 *{
     margin: 0;
     padding: 0;
@@ -30,14 +31,38 @@ a {
     background-color: #ccc;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .container{
     width: 100vw;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .inner{
     max-width: 1440px;
     margin: 0 auto;
+}
+
+.title{
+    width: 100%;
+    margin: 20px auto 0 auto;
+    @include textStyle($main-font, $title, 40px, 400, $color-dark);
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+    &:after{
+        content: "";
+        width: 50px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        height: 1px;
+        background-color: $color-dark;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+    }
 }

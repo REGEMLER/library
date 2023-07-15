@@ -8,7 +8,10 @@
 }
 
 .inner__main{
+    max-height: 600px;
     min-height: 600px;
+    height: 600px;
+    overflow: hidden;
     .main__content{
         width: 600px;
         margin-top: 220px;
