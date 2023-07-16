@@ -58,16 +58,20 @@
     gap: 10px;
     input{
         display: none;
-    }
-    .about-pagination__item{
-        display: block;
-        width: 16px;
-        height: 16px;
-        background-color: $color-black;
-        border-radius: 100%;
-    }
-    .about-pagination__item_active{
-        background-color: $primary-color;
+        + .about-pagination__item{
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-color: $color-black;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        &:checked {
+            + .about-pagination__item{
+                background-color: $primary-color;
+            }
+        }
     }
 }
 
