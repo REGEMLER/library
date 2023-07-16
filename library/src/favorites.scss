@@ -1,0 +1,150 @@
+@import "variables";
+
+.bg__favorites{
+    background-color: $color-white;
+}
+
+.inner__favorites{
+    padding: 0 60px 0 20px;
+}
+
+.favorites__subtitle{
+    width: 100%;
+    margin: 60px auto 50px auto;
+    text-align: left;
+    @include textStyle($secont-font, $subtitle, normal, 700, $color-black);
+}
+
+.favorites__radios{
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    input{
+        display: none;
+        + .favorites__radio{
+            @include textStyle($secont-font, $subtitle, normal, 400, $color-black);
+            &:before {
+                content: '';
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                padding: 3px;
+                background-color: $color-white;
+                border: 2px solid darken($color-black, 25%);
+                border-radius: 100%;
+                margin-right: 20px; 
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+        }
+        &:checked {
+            + .favorites__radio{
+                @include textStyle($secont-font, $subtitle, normal, 700, $color-black);
+                &:before {
+                    background-color: $color-black;
+                    box-shadow: inset 0 0 0 4px $color-white;
+                }
+            }
+        }
+        &:focus{
+            + .favorites__radio{
+                &:before {
+                    outline: none;
+                    border-color: $color-white;
+                }
+            }
+        }
+        &:disabled{
+            + .favorites__radio{
+                &:before {
+                    box-shadow: inset 0 0 0 4px $color-white;
+                    background-color: $color-gray;
+                }
+            }
+        }
+    }
+}
+
+.favorites__group{
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    // gap: 200px;
+    .favorites__card{
+        max-width: 550px;
+        position: relative;
+        padding: 15px 20px;
+        border: 1px solid $color-black;
+        .staff-picks{
+            @include textStyle($main-font, $subtitle, normal, 400, $color-black);
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            position: relative;
+            &:after {
+                content: "";
+                width: 50px;
+                margin: 0 auto;
+                height: 1px;
+                background-color: $primary-color;
+                position: absolute;
+                top: 30px;
+                left: 0;
+            }
+        }
+        .favorites-card__title{
+            margin: 40px 0 5px 0;
+            @include textStyle($secont-font, $text, 40px, 700, $color-black);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .favorites-card__subtitle{
+            margin: 5px 0;
+            @include textStyle($secont-font, $text, 40px, 700, $color-black);
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+        .favorites-card__text{
+            max-width: 65%;
+            margin: 5px 0;
+            @include textStyle($secont-font, $text, 40px, 400, $color-black);
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: left;
+        }
+        .favorites-card__btn{
+            width: 75px;
+            height: 30px;
+            @include textStyle($secont-font, $small-text, normal, 700, $color-black);
+            letter-spacing: 1px;
+            border-radius: 2px;
+            border: 1px solid $color-dark;
+            background-color: $color-white;
+            color: $color-black;
+            text-align: center;
+            cursor: pointer;
+            transition: all .5s ease;
+            position: absolute;
+            left: 20px;
+            bottom: 2.5%;
+            &:hover{
+                border-color: $primary-color;
+                color: $primary-color; 
+            }
+        }
+        .favorites-card__img{
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            position: absolute;
+            right: -40px;
+            bottom: 0;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

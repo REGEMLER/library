@@ -61,17 +61,68 @@
                     <div class="about__arrow about__arrow_right"><img src="Arrow-right.svg" alt="arrow right"></div>
                 </div>
                 <div class="about_pagination">
-                    <input id="radio1" type="radio" name="about">
-                    <label for="radio1"  class="about-pagination__item about-pagination__item_active"></label>
-                    <input  id="radio2" type="radio" name="about">
-                    <label for="radio2"  class="about-pagination__item"></label>
-                    <input  id="radio3" type="radio" name="about">
-                    <label for="radio3"  class="about-pagination__item"></label>
+                    <input id="pagination1" type="radio" name="about__radio">
+                    <label for="pagination1" class="about-pagination__item about-pagination__item_active"></label>
+                    <input  id="pagination2" type="radio" name="about__radio">
+                    <label for="pagination2" class="about-pagination__item"></label>
+                    <input  id="pagination3" type="radio" name="about__radio">
+                    <label for="pagination3" class="about-pagination__item"></label>
                 </div>
             </div>
         </section>
         <section class="container bg__favorites">
-            <div class="inner inner__favorites"></div>
+            <div class="inner inner__favorites">
+                <h2 class="title">Favorites</h2>
+                <h3 class="favorites__subtitle">Pick favorites of season</h3>
+                <div class="favorites__radios">
+                    <input type="radio" name="books" id="favoritesRadio1" checked>
+                    <label for="favoritesRadio1" class="favorites__radio favorites__radio_active">Winter</label>
+                    <input type="radio" name="books" id="favoritesRadio2">
+                    <label for="favoritesRadio2" class="favorites__radio">Spring</label>
+                    <input type="radio" name="books" id="favoritesRadio3">
+                    <label for="favoritesRadio3" class="favorites__radio">Summer</label>
+                    <input type="radio" name="books" id="favoritesRadio4" disabled>
+                    <label for="favoritesRadio4" class="favorites__radio">Autumn</label>
+                </div>
+                <div class="favorites__contents">
+                    <div class="favorites__group favorites__group1">
+                        <div class="favorites__card">
+                            <h6 class="staff-picks">Staff Picks</h6>
+                            <h4 class="favorites-card__title">The Book Eaters</h4>
+                            <h5 class="favorites-card__subtitle">By Sunyi Dean</h5>
+                            <p class="favorites-card__text">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+                            <button class="favorites-card__btn">Buy</button>
+                            <div class="favorites-card__img"><img src="book1.png" alt="The book Eaters"></div>
+                        </div>
+                        <div class="favorites__card">
+                            <h6 class="staff-picks">Staff Picks</h6>
+                            <h4 class="favorites-card__title">Cackle</h4>
+                            <h5 class="favorites-card__subtitle">By Rachel Harrison</h5>
+                            <p class="favorites-card__text">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                            <button class="favorites-card__btn">Buy</button>
+                            <div class="favorites-card__img"><img src="book2.png" alt="The book Eaters"></div>
+                        </div>
+                    </div>
+                    <div class="favorites__group favorites__group2">
+                        <div class="favorites__card">
+                            <h6 class="staff-picks">Staff Picks</h6>
+                            <h4 class="favorites-card__title">Dante: Poet of the Secular World</h4>
+                            <h5 class="favorites-card__subtitle">By Erich Auerbach</h5>
+                            <p class="favorites-card__text">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+                            <button class="favorites-card__btn">Buy</button>
+                            <div class="favorites-card__img"><img src="book3.png" alt="The book Eaters"></div>
+                        </div>
+                        <div class="favorites__card">
+                            <h6 class="staff-picks">Staff Picks</h6>
+                            <h4 class="favorites-card__title">The Last Queen</h4>
+                            <h5 class="favorites-card__subtitle">By Clive Irving</h5>
+                            <p class="favorites-card__text">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
+                            <button class="favorites-card__btn">Buy</button>
+                            <div class="favorites-card__img"><img src="book4.png" alt="The book Eaters"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="container bg__coffee">
             <div class="inner inner__coffee"></div>
