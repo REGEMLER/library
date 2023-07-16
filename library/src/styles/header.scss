@@ -5,19 +5,19 @@
 }
 
 .inner__header{
-    padding: 0 20px;
+    padding: 0 10px 0 20px;
 }
 
 .header__nav{
     display: flex;
     align-items: center;
-    min-height: 90px;
+    min-height: 92px;
 }
 
 .header__logo{
     @include textStyle($main-font, $logo, 50px, 400, $color-white);
     margin-right: 455px;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.66px;
 }
 
 .header__menu{

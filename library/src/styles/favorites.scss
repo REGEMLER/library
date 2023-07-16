@@ -5,12 +5,12 @@
 }
 
 .inner__favorites{
-    padding: 0 60px 0 20px;
+    padding: 0 20px;
 }
 
 .favorites__subtitle{
     width: 100%;
-    margin: 60px auto 50px auto;
+    margin: 60px auto 40px auto;
     text-align: left;
     @include textStyle($secont-font, $subtitle, normal, 700, $color-black);
 }
@@ -69,14 +69,16 @@
 .favorites__group{
     width: 100%;
     margin: 40px auto;
+    padding-right: 40px;
     display: flex;
     align-items: stretch;
     justify-content: space-between;
     // gap: 200px;
     .favorites__card{
         max-width: 550px;
+        min-height: 555px;
         position: relative;
-        padding: 15px 20px;
+        padding: 20px;
         border: 1px solid $color-black;
         .staff-picks{
             @include textStyle($main-font, $subtitle, normal, 400, $color-black);
@@ -85,30 +87,28 @@
             position: relative;
             &:after {
                 content: "";
-                width: 50px;
-                margin: 0 auto;
+                width: 60px;
                 height: 1px;
                 background-color: $primary-color;
                 position: absolute;
-                top: 30px;
+                top: 35px;
                 left: 0;
             }
         }
         .favorites-card__title{
-            margin: 40px 0 5px 0;
+            margin: 35px 0 0 0;
             @include textStyle($secont-font, $text, 40px, 700, $color-black);
             letter-spacing: 2px;
             text-transform: uppercase;
         }
         .favorites-card__subtitle{
-            margin: 5px 0;
             @include textStyle($secont-font, $text, 40px, 700, $color-black);
             letter-spacing: 2px;
             text-transform: capitalize;
         }
         .favorites-card__text{
-            max-width: 65%;
-            margin: 5px 0;
+            max-width: 70%;
+            margin: 15px 0;
             @include textStyle($secont-font, $text, 40px, 400, $color-black);
             letter-spacing: 2px;
             text-transform: capitalize;
