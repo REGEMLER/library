@@ -1,0 +1,85 @@
+@import "variables";
+
+.bg__coffee{
+    background-color: $color-white;
+}
+
+.inner__coffee{
+    padding: 0 20px;
+}
+
+.coffee__subtitle{
+    width: 100%;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    padding: 20px 20px 5px 20px;
+    @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.coffee__content{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 400px;
+}
+
+.coffee__card{
+    max-width: 470px;
+    min-height: 520px;
+}
+
+.coffee-card__title{
+    width: 100%;
+    margin: 40px auto 35px auto;
+    @include textStyle($main-font, $title, 40px, 400, $primary-color);
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.coffee-card__title_right{
+    text-align: right;
+}
+
+.coffee-card__title_left{
+    text-align: left;
+}
+
+.coffee-card__items{
+    .coffee-card__item{
+        min-width: 440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        position: relative;
+        &:after{
+            content: "";
+            width: 100px;
+            height: 1px;
+            background-color: $primary-color;
+            position: absolute;
+            left: 60%;
+            top: 50%
+        }
+        .coffee-card__text{
+            @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: left;
+        }
+        .coffee-card__price{
+            @include textStyle($main-font, $subtitle, 40px, 400, $color-black);
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+    }
+    .coffee-card__item_right{
+        justify-content: flex-end;
+        gap: 220px;
+    }
+}
