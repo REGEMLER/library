@@ -81,7 +81,7 @@
         padding: 20px;
         border: 1px solid $color-black;
         .staff-picks{
-            @include textStyle($main-font, $subtitle, normal, 400, $color-black);
+            @include textStyle($main-font, $subtitle, 40px, 400, $color-black);
             letter-spacing: 2px;
             text-transform: capitalize;
             position: relative;
