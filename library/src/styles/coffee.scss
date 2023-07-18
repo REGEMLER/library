@@ -10,13 +10,16 @@
 
 .coffee__subtitle{
     width: 100%;
-    margin: 40px auto 0 auto;
+    margin: 0 auto;
     text-align: center;
-    padding: 20px 20px 5px 20px;
     @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
     letter-spacing: 2px;
-    text-transform: capitalize;
 }
+
+.coffee__subtitle1{
+    margin-top: 60px;
+}
+
 
 .coffee__content{
     width: 100%;
@@ -34,7 +37,7 @@
 
 .coffee-card__title{
     width: 100%;
-    margin: 40px auto 35px auto;
+    margin: 40px auto;
     @include textStyle($main-font, $title, 40px, 400, $primary-color);
     letter-spacing: 2px;
     text-transform: capitalize;

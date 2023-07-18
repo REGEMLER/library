@@ -78,7 +78,7 @@
         max-width: 550px;
         min-height: 555px;
         position: relative;
-        padding: 20px;
+        padding: 18px 20px 20px 20px;
         border: 1px solid $color-black;
         .staff-picks{
             @include textStyle($main-font, $subtitle, 40px, 400, $color-black);
@@ -96,7 +96,7 @@
             }
         }
         .favorites-card__title{
-            margin: 35px 0 0 0;
+            margin: 15px 0 0 0;
             @include textStyle($secont-font, $text, 40px, 700, $color-black);
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -108,7 +108,7 @@
         }
         .favorites-card__text{
             max-width: 70%;
-            margin: 15px 0;
+            margin: 20px 0;
             @include textStyle($secont-font, $text, 40px, 400, $color-black);
             letter-spacing: 2px;
             text-transform: capitalize;
