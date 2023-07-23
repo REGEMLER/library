@@ -69,6 +69,11 @@
         letter-spacing: 1px;
         text-align: center;
         cursor: pointer;
+        transition: all linear .5s;
+        &:hover{
+            border: none;
+            background-color: $primary-color;
+        }
     }
     .digital__icons{
         display: none;
@@ -105,6 +110,11 @@
             letter-spacing: 1px;
             text-align: center;
             cursor: pointer;
+            transition: all linear .5s;
+            &:hover{
+                border: none;
+                background-color: $primary-color;
+            }
         }
     }
 }

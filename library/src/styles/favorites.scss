@@ -133,6 +133,11 @@
                 border-color: $primary-color;
                 color: $primary-color; 
             }
+            &:disabled{
+                border-color: $primary-color;
+                color: $primary-color; 
+                cursor: auto
+            }
         }
         .favorites-card__img{
             width: 200px;

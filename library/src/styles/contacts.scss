@@ -33,16 +33,25 @@
         @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
         letter-spacing: 2px;
         text-transform: capitalize;
+        transition: all linear .3s;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     .contacts__link_last{
         margin-bottom: 40px;
     }
     .contacts__bottom{
+        display: block;
         width: 100%;
         margin: 20px auto;
         @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
         letter-spacing: 2px;
         text-transform: capitalize;
+        transition: all linear .3s;
+        &:hover{
+            text-decoration: underline;
+        }
         .contacts__bottom_span{
             font-weight: 700;
         }

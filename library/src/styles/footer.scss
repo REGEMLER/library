@@ -24,6 +24,10 @@
         margin-bottom: 18px;
         @include textStyle($secont-font, $text, 20px, 400, $color-white);
         text-transform: capitalize;
+        transition: all linear .3s;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     .footer__social-medias{
         display: flex;
@@ -67,5 +71,9 @@
         @include textStyle($secont-font, $subtitle, 20px, 400, $color-white);
         letter-spacing: 2px;
         cursor: pointer;
+        transition: all linear .3s;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
