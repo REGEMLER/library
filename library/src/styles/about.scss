@@ -66,6 +66,18 @@
             border-radius: 100%;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
+            &:before {
+                content: '';
+                display: block;
+                width: 26px;
+                height: 26px;
+                position: absolute;
+                top: -40%;
+                left: -30%;
+                opacity: 0;
+                cursor: pointer;
+            }
         }
         &:checked {
             + .about-pagination__item{

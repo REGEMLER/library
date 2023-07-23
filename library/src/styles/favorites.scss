@@ -23,6 +23,8 @@
         display: none;
         + .favorites__radio{
             @include textStyle($secont-font, $subtitle, normal, 400, $color-black);
+            cursor: pointer;
+            position: relative;
             &:before {
                 content: '';
                 display: inline-block;
@@ -33,9 +35,19 @@
                 border: 2px solid darken($color-black, 25%);
                 border-radius: 100%;
                 margin-right: 20px; 
-                cursor: pointer;
                 text-align: center;
                 transition: all 0.3s ease;
+            }
+            &:after{
+                content: '';
+                display: block;
+                width: 130%;
+                height: 130%;
+                position: absolute;
+                top: -30%;
+                left: -10%;
+                opacity: 0;
+                cursor: pointer;
             }
         }
         &:checked {
