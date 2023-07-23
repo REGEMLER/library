@@ -1,0 +1,30 @@
+@import "variables";
+
+.bg__main{
+    background-image: url(../../public/welcome-bg-desc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.inner__main{
+    max-height: 600px;
+    min-height: 600px;
+    overflow: hidden;
+    .main__content{
+        width: 600px;
+        margin-top: 220px;
+        height: 220px;
+        background-color: $color-black;
+        padding: 35px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .main_text{
+            @include textStyle($main-font, $title, 50px, 400, $color-white);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+}

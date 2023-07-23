@@ -1,0 +1,120 @@
+@import "variables";
+
+.bg__digital{
+    background-color: $color-white;
+}
+
+.inner__digital{
+    padding: 0 20px;
+}
+
+.digital__content{
+    width: 100%;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.digital__findcard{
+    .digital-findcard__logo{
+        width: 100%;
+        margin: 60px auto 30px auto;
+        @include textStyle($secont-font, $logo, normal, 400, $color-black);
+        letter-spacing: 0.6px;
+        text-align: center;
+    }
+}
+
+.digital__form{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px 15px 20px;
+    border: 3px solid $primary-color;
+    .digital-form__inner{
+        background-color: $primary-color;
+        padding: 20px 20px 1px 20px;
+        .digital-form__title{
+            width: 100%;
+            margin: 0 auto 20px auto;
+            @include textStyle($main-font, $logo, 50px, 400, $color-black);
+            letter-spacing: 0.6px;
+        }
+        .digital-form__input{
+            display: block;
+            width: 520px;
+            height: 66px;
+            background-color: $color-white;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            &::placeholder{
+                width: 100%;
+                margin: 0 auto;
+                @include textStyle($main-font, $logo, 66px, 400, $color-gray);
+                transform: translateY(20%);
+                letter-spacing: 0.6px;
+            }
+        }
+    }
+    .digital-form__btn{
+        display: block;
+        width: 242px;
+        margin: 15px auto;
+        height: 44px;
+        padding: 10px;
+        background-color: $color-white;
+        border: 1px solid $color-dark;
+        border-radius: 2px;
+        @include textStyle($secont-font, $subtitle, normal, 700, $color-dark);
+        letter-spacing: 1px;
+        text-align: center;
+        cursor: pointer;
+        transition: all linear .5s;
+        &:hover{
+            border: none;
+            background-color: $primary-color;
+        }
+    }
+    .digital__icons{
+        display: none;
+    }
+}
+
+.digital__getcard{
+    .digital-getcard__logo{
+        width: 100%;
+        margin: 60px auto 35px auto;
+        @include textStyle($main-font, $logo, normal, 400, $color-black);
+        letter-spacing: 0.6px;
+        text-align: right;
+    }
+    .digital-getcard__text{
+        max-width: 455px;
+        margin: 30px auto 35px auto;
+        @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
+        letter-spacing: 0.4px;
+        text-align: right;
+    }
+    .digital-getcard__btns{
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        .digital__btn{
+            width: 75px;
+            height: 30px;
+            padding: 10px;
+            background-color: $color-white;
+            border: 1px solid $color-dark;
+            border-radius: 2px;
+            @include textStyle($secont-font, $small-text, normal, 700, $color-dark);
+            letter-spacing: 1px;
+            text-align: center;
+            cursor: pointer;
+            transition: all linear .5s;
+            &:hover{
+                border: none;
+                background-color: $primary-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+$primary-color: #BB945F; 
+$light-color: #FDDCC4; 
+$color-dark: #0C0C0E; 
+$color-white: #FFFFFF; 
+$color-black: #000000; 
+$color-gray: #8E8E8E;
+
+$main-font: "Forum", cursive; 
+$secont-font: "Inter", sans-serif; 
+
+$title: 40px; 
+$logo: 30px; 
+$footer: 22px; 
+$subtitle: 20px; 
+$text: 15px; 
+$small-text: 10px; 
+
+@mixin textStyle($Font, $Size, $LH, $Weight, $color){
+    font-family: $Font;
+    font-size:$Size;
+    line-height:$LH;
+    font-weight:$Weight;
+    color: $color;
+}
