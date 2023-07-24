@@ -28,11 +28,11 @@
 .digital__form{
     width: 600px;
     margin: 0 auto;
-    padding: 20px 20px 15px 20px;
+    padding: 18px 18px 12px 20px;
     border: 3px solid $primary-color;
     .digital-form__inner{
         background-color: $primary-color;
-        padding: 20px 20px 1px 20px;
+        padding: 18px 20px 1px 20px;
         .digital-form__title{
             width: 100%;
             margin: 0 auto 20px auto;
@@ -47,11 +47,11 @@
             border-radius: 10px;
             margin-bottom: 25px;
             padding: 20px;
+            @include textStyle($main-font, $logo, 66px, 400, $primary-color);
             &::placeholder{
                 width: 100%;
                 margin: 0 auto;
                 @include textStyle($main-font, $logo, 66px, 400, $color-gray);
-                transform: translateY(20%);
                 letter-spacing: 0.6px;
             }
         }
@@ -59,7 +59,7 @@
     .digital-form__btn{
         display: block;
         width: 242px;
-        margin: 15px auto;
+        margin: 18px auto;
         height: 44px;
         padding: 10px;
         background-color: $color-white;
@@ -89,7 +89,7 @@
         text-align: right;
     }
     .digital-getcard__text{
-        max-width: 455px;
+        max-width: 460px;
         margin: 30px auto 35px auto;
         @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
         letter-spacing: 0.4px;

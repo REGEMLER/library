@@ -1,10 +1,21 @@
 @import "variables";
 
 .bg__main{
-    background-image: url(../../public/welcome-bg-desc.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background: url(../../public/welcome-bg-desc.png), lightgray 50% / cover no-repeat;
+    position: relative;
+    &:after{
+        content: "";
+        width: 100vw;
+        margin: 0 auto;
+        overflow-x: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-height: 600px;
+        min-height: 600px;
+        z-index: 3;
+        background: linear-gradient(rgba(12, 12, 14, 1), rgba(12, 12, 14, 0) 50%);
+    }
 }
 
 .inner__main{
