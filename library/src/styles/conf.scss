@@ -26,8 +26,7 @@ a {
 }
 
 .wrapper{
-    width: 100vw;
-    // width: 100%;
+    width: 100%;
     margin: 0 auto;
     background-color: #ccc;
     display: flex;
@@ -36,15 +35,13 @@ a {
 }
 
 .container{
-    width: 1440px;
-    // width: 100vw;
+    width: 100vw;
     margin: 0 auto;
     overflow-x: hidden;
 }
 
 .inner{
-    width: 1440px;
-    // max-width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -68,4 +65,16 @@ a {
         left: 0;
         right: 0;
     }
+}
+
+.blur{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    background-color: #5C5C5C;
+    opacity: 0.9;
 }
