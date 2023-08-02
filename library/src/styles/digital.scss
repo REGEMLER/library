@@ -13,6 +13,10 @@
     margin: 0 auto 40px auto;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 1100px){
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .digital__findcard{
@@ -87,6 +91,10 @@
         @include textStyle($main-font, $logo, normal, 400, $color-black);
         letter-spacing: 0.6px;
         text-align: right;
+        @media screen and (max-width: 1100px){
+            text-align: center;
+            margin: 20px auto;
+        }
     }
     .digital-getcard__text{
         max-width: 460px;
@@ -94,11 +102,19 @@
         @include textStyle($secont-font, $subtitle, 40px, 400, $color-black);
         letter-spacing: 0.4px;
         text-align: right;
+        @media screen and (max-width: 1100px){
+            max-width: 600px;
+            text-align: center;
+            margin: 40px auto;
+        }
     }
     .digital-getcard__btns{
         display: flex;
         justify-content: flex-end;
         gap: 20px;
+        @media screen and (max-width: 1100px){
+            justify-content: center;
+        }
         .digital__btn{
             width: 75px;
             height: 30px;

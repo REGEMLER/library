@@ -27,24 +27,21 @@ let isActive = false;
  }
 
  function closeMenu(){
-    document.body.style.overflowY = "";
-    menu.classList.remove("header__menu_active");
-    logo.classList.remove("header__logo_active");
-    bg.classList.remove("bg__header_active");
-    line1.classList.remove("burger__item1_active");
-    line2.classList.remove("burger__item2_active");
-    line3.classList.remove("burger__item3_active");
-    console.log(`${isActive} close`)
-    isActive = false; 
- }
-
- function navOnClose(event){
-    if(isActive) {
-        closeMenu(); 
-    }  else {
+    if(isActive){
+        document.body.style.overflowY = "";
+        menu.classList.remove("header__menu_active");
+        logo.classList.remove("header__logo_active");
+        bg.classList.remove("bg__header_active");
+        line1.classList.remove("burger__item1_active");
+        line2.classList.remove("burger__item2_active");
+        line3.classList.remove("burger__item3_active");
+        console.log(`${isActive} close`)
+        isActive = false; 
+    } else {
         return
     }
+
  }
 
  burger.addEventListener("click", showMenu);
- nav.addEventListener("click", navOnClose)
+ nav.addEventListener("click", closeMenu)
