@@ -112,17 +112,19 @@
 
 .header__menu_active{
     position: absolute;
-    top: 10%;
+    top: 30%;
     width: 100vw;
     margin: 0 auto;
     height: 100vh;
     right: 0;
-    left: 0;
     visibility: visible;
     opacity: 1;
     background-color: $color-black;
     padding-bottom: 100px;
-    z-index: 4;
+    z-index: 10;
+    align-items: flex-end;
+    padding-right: 130px;
+    gap: 30px;
 }
 
 .header__icons{
@@ -130,8 +132,8 @@
     align-items: center;
     margin-left: 40px;
     position: absolute;
-    right: 5%;
-    top: 5%;
+    right: 3%;
+    top: 8%;
     z-index: 5;
     .icon{
         width: 28px;
