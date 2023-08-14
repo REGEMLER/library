@@ -112,7 +112,7 @@
 
 .header__menu_active{
     position: absolute;
-    top: 30%;
+    top: 0;
     width: 100vw;
     margin: 0 auto;
     height: 100vh;
@@ -121,8 +121,9 @@
     opacity: 1;
     background-color: $color-black;
     padding-bottom: 100px;
-    z-index: 10;
+    z-index: 4;
     align-items: flex-end;
+    text-align: center;
     padding-right: 130px;
     gap: 30px;
 }
@@ -132,8 +133,8 @@
     align-items: center;
     margin-left: 40px;
     position: absolute;
-    right: 3%;
-    top: 8%;
+    right: 5%;
+    top: 5%;
     z-index: 5;
     .icon{
         width: 28px;
@@ -171,4 +172,8 @@
              }
         }
     }
+    @media screen and (max-width: 770px){
+        right: 3%;
+        top: 8%;
+     }
 }
