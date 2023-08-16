@@ -19,7 +19,6 @@ let isActive = false;
         line1.classList.add("burger__item1_active");
         line2.classList.add("burger__item2_active");
         line3.classList.add("burger__item3_active");
-        console.log(logo)
         isActive = true; 
     } else {
         closeMenu(); 
@@ -30,12 +29,11 @@ let isActive = false;
     if(isActive){
         document.body.style.overflowY = "";
         menu.classList.remove("header__menu_active");
-        logo.classList.remove("header__logo_active");
         bg.classList.remove("bg__header_active");
         line1.classList.remove("burger__item1_active");
         line2.classList.remove("burger__item2_active");
         line3.classList.remove("burger__item3_active");
-        console.log(`${isActive} close`)
+        logo.classList.remove("header__logo_active");
         isActive = false; 
     } else {
         return
