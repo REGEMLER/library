@@ -6,6 +6,7 @@
 
 .inner__favorites{
     padding: 0 20px;
+    position: relative;
 }
 
 .favorites__subtitle{
@@ -168,5 +169,18 @@
                 height: 100%;
             }
         }
+    }
+}
+
+.animated{
+    opacity: 0.3;
+    transition: all linear .7s;
+}
+
+.sticky{
+    @media screen and (max-width: 1220px){
+        position: fixed;
+        top: 10%;
+        z-index: 5;
     }
 }
