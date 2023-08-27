@@ -45,6 +45,15 @@
     }
 }
 
+.about__arrow_passive{
+    background-color: $primary-color;
+    img{
+        background-color: $primary-color;
+        padding: 10px;
+        border-radius: 50%;
+    }
+}
+
 .slider__container{
     max-width: 1400px;
     margin: 0 auto;
@@ -58,6 +67,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 25px;
+        position: relative;
         @media screen and (max-width: 1024px){
             gap: 0;
         }
@@ -131,4 +141,40 @@
             }
         }
     }
+}
+
+.center{
+    left: -33%;
+    transition: all linear 1.5s;
+    @media screen and (max-width: 1024px){
+        left: -200%;
+        transition: all linear 1s;
+    }
+}
+
+.right{
+    left: -67%;
+    transition: all linear 1.5s;
+    @media screen and (max-width: 1024px){
+        left: -400%;
+        transition: all linear 1s;
+    }
+}
+
+.left{
+    left: 0;
+    transition: all linear 1.5s;
+    @media screen and (max-width: 1024px){
+        transition: all linear 1s;
+    }
+}
+
+.two{
+    left: -100%; 
+    transition: all linear 1s;
+}
+
+.four{
+    left: -300%;
+    transition: all linear 1s;
 }
