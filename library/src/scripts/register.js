@@ -10,12 +10,12 @@ let isVisibleRegister = false;
 let isVisibleLogin = false; 
 
 function showDrop(){
-    dropMenu.classList.add("drop_active");
+    dropMenu.classList.add("active");
     isVisibleDrop = true;
 }
 
 function closeDrop(){
-    dropMenu.classList.remove("drop_active");
+    dropMenu.classList.remove("active");
     isVisibleDrop = false;
 }
 
@@ -30,14 +30,14 @@ function onProfile(e){
 profile.addEventListener("click", onProfile);
 
 function showLogin(){
-    login.classList.add("register_active");
+    login.classList.add("active");
     wrapper.classList.add("blur");
     document.body.style.overflowY = "hidden";
     isVisibleLogin = true;
 }
 
 function closeLogin(){
-    login.classList.remove("register_active");
+    login.classList.remove("active");
     wrapper.classList.remove("blur");
     document.body.style.overflowY = "";
     isVisibleLogin = false;
@@ -48,18 +48,23 @@ function loginHandler(e){
     if(e.target.closest(".register__icon")){
         closeLogin();
     }
+    if(e.target.closest(".register__link")){
+        e.preventDefault();
+        closeLogin();
+        showRegister();
+    }
 }
 login.addEventListener("click", loginHandler);
 
 function showRegister(){
-    register.classList.add("register_active");
+    register.classList.add("active");
     wrapper.classList.add("blur");
     document.body.style.overflowY = "hidden";
     isVisibleRegister = true;
 }
 
 function closeRegister(){
-    register.classList.remove("register_active");
+    register.classList.remove("active");
     wrapper.classList.remove("blur");
     document.body.style.overflowY = "";
     isVisibleRegister = false;
@@ -82,6 +87,11 @@ function registerHandler(e){
     e.stopPropagation();
     if(e.target.closest(".register__icon")){
         closeRegister();
+    }
+    if(e.target.closest(".register__link")){
+        e.preventDefault();
+        closeRegister();
+        showLogin();
     }
 }
 register.addEventListener("click", registerHandler);

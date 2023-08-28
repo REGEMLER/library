@@ -1,0 +1,152 @@
+@import "variables";
+
+.profile{
+    width: 600px;
+    margin: 0 auto;
+    min-height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    border-radius: 2px;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all linear .7s;
+}
+
+.profile__aside{
+    flex-basis: 28%;
+    background-color: $color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .profile__logo{
+        width: 80px;
+        height: 80px;
+        background-color: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include textStyle($secont-font, $subtitle, 20px, 400, $primary-color);
+        text-transform: capitalize;
+    }
+    .profile__name{
+        width: 120px;
+        height: 30px;
+        background-color: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include textStyle($secont-font, $subtitle, 20px, 400, $color-black);
+        text-transform: capitalize;
+    }
+}
+
+.profile__content{
+    flex-basis: 72%;
+    padding: 40px 20px;
+    position: relative;
+    .profile__x{
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        position: absolute;
+        left: 90%;
+        top: 5%;
+        cursor: pointer;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .profile__title{
+        width: 100%;
+        margin: 0 auto 40px auto;
+        @include textStyle($main-font, $title, 20px, 400, $color-black);
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+    }
+    .profile__icons{
+        display: flex;
+        gap: 20px;
+        .profile__icon{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .profile-icon__title{
+                @include textStyle($secont-font, $subtitle, 20px, 400, $color-black);
+                letter-spacing: 0.4px;
+                text-transform: capitalize;
+                text-align: center;
+            }
+            .profile-icon__img{
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .profile-icon__number{
+                @include textStyle($secont-font, $small-text, 20px, 400, $color-black);
+                letter-spacing: 0.2px;
+                text-transform: capitalize;
+                text-align: center;
+            }
+        }
+    }
+    .profile__subtitle{
+        margin: 20px auto 30px auto;
+        @include textStyle($secont-font, 25px, 20px, 400, $color-dark);
+    }
+    .profile__books{
+        margin: 30px auto 40px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .profile__book{
+            @include textStyle($secont-font, $subtitle, 20px, 400, $color-black);
+            letter-spacing: 2px;
+            position: relative;
+            padding-left: 28px;
+            &:before{
+                content: "";
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $color-black;
+                position: absolute;
+                top: 50%;
+                left: 4%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .profile__footer{
+        display: flex;
+        gap: 15px;
+        .profile__text{
+            @include textStyle($secont-font, $subtitle, 20px, 400, $color-dark);
+        }
+        .profile__number{
+            @include textStyle($secont-font, $subtitle, 20px, 400, $primary-color);
+        }
+        .profile__cube{
+            width: 13px;
+            height: 13px;
+            object-fit: cover;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
