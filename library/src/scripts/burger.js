@@ -42,4 +42,5 @@ let isActive = false;
  }
 
  burger.addEventListener("click", showMenu);
- nav.addEventListener("click", closeMenu)
+ nav.addEventListener("click", closeMenu);
+

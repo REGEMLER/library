@@ -11,7 +11,50 @@
     <title>Library</title>
 </head>
 <body>
+    <div class="modal register">
+        <div class="register__icon">
+            <img src="close_btn.svg" alt="X">
+        </div>
+        <h2 class="register__title">Register</h2>
+        <form class="register__form" action="#">
+            <label for="firstName" class="register__item">First name</label>
+            <input class="register__input" id="firstName" type="text" required>
+            <label for="lastName" class="register__item">Last name</label>
+            <input class="register__input" id="lastName" type="text" required>
+            <label for="email" class="register__item">E-mail</label>
+            <input class="register__input" id="email" type="email" required pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+            <label for="password" class="register__item">Password</label>
+            <input class="register__input" id="password" type="password" minlength="8" required>
+            <button class="register__btn">Sign Up</button>
+        </form>
+        <div class="register__footer">
+            <p class="register__text">Already have an account?</p>
+            <a class="register__link" href="#">Login</a>
+        </div>
+    </div>
+    <div class="modal login">
+        <div class="register__icon">
+            <img src="close_btn.svg" alt="X">
+        </div>
+        <h2 class="register__title">Login</h2>
+        <form class="register__form" action="#">
+            <label for="login" class="register__item">E-mail or readers card</label>
+            <input class="register__input" id="login" type="text" value="" required>
+            <label for="passwordCheck" class="register__item">Password</label>
+            <input class="register__input" id="passwordCheck" type="password" minlength="8" required value="">
+            <button class="register__btn">Log In</button>
+        </form>
+        <div class="register__footer">
+            <p class="register__text">Don’t have an account?</p>
+            <a class="register__link" href="#">Register</a>
+        </div>
+    </div>
     <div class="wrapper">
+        <div class="drop">
+            <h3 class="drop__title">Profile</h3>
+            <p class="drop__item drop__item1">Log In</p>
+            <p class="drop__item drop__item2">Register</p>
+        </div>
         <header class="container bg__header">
             <div class="inner inner__header">
                 <div class="header__nav">
@@ -26,7 +69,9 @@
                         </ul>
                     </nav>
                     <div class="header__icons">
-                        <div class="icon"><img src="icon_profile.svg" alt="icon avatar"></div>
+                        <div class="icon">
+                            <img src="icon_profile.svg" alt="icon avatar">
+                        </div>
                         <div class="burger">
                             <span class="burger__item burger__item1"></span>
                             <span class="burger__item burger__item2"></span>
