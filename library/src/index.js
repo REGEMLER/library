@@ -5,3 +5,4 @@ import './scripts/carusel.js';
 import './scripts/slider.js';
 import './scripts/events.js';
 import './scripts/auth.js';
+import './scripts/checkCard.js';

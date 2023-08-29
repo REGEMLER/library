@@ -1,7 +1,8 @@
-import { closeRegister, closeLogin } from "./togglers";
+import { close } from "./togglers";
+import { setIconProfile, returnIconProfile, createCardNumber } from "./helpers";
+import { changeDrop } from "./changeDrop";
 const registerBtn = document.querySelector(".register .register__btn");
 const loginBtn = document.querySelector(".login .register__btn");
-const checkCardBtn = document.querySelector(".digital-form__btn");
 
 let cardNumber = null; 
 
@@ -20,60 +21,13 @@ function register(e){
         localStorage.setItem("lastName", lastName);
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
-        closeRegister();
+        close(document.querySelector(".register"));
         setIconProfile();
         cardNumber = createCardNumber();
         localStorage.setItem("cardNumber", cardNumber);
     }
 }
 registerBtn.addEventListener("click", register);
-
-function setIconProfile(){
-    const icon = document.querySelector(".header__icons .icon");
-    const img = document.getElementById("iconProfile");
-    img.style.display = "none";
-    const name = localStorage.getItem('firstName').slice(0, 1).toUpperCase();
-    const surname = localStorage.getItem('lastName').slice(0, 1).toUpperCase();
-    icon.textContent = name + surname; 
-    icon.classList.add("icon_registred");
-}
-
-function createCardNumber(){
-    const SYMBOLS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
-    let result = "";
-    for(let i = 0; i < 9; i++){
-        let number = Math.floor(Math.random() * 16);
-        result += SYMBOLS[number];
-    }
-    return result; 
-}
-
-function checkCard(e){
-    const name = localStorage.getItem('firstName');
-    const cardNumber = localStorage.getItem('cardNumber');
-    if(!cardNumber || !name){
-        alert("You are not registered!");
-        return; 
-    }
-    let readersName = document.getElementById("readersName");
-    let readersCard = document.getElementById("readeersCard");
-    if( name !== readersName.value || cardNumber !== readersCard.value){
-        alert("Incorrect data!");
-        return; 
-    }
-    e.preventDefault();
-    const icons = document.querySelector(".digital__icons");
-    const btn = document.querySelector(".digital-form__btn");
-    icons.classList.add("digital__icons_active");
-    btn.style.display = "none";
-    setTimeout(()=> {
-        icons.classList.remove("digital__icons_active");
-        btn.style.display = "block";
-        readersName.value = "";
-        readersCard.value = "";
-    },10000)
-}
-checkCardBtn.addEventListener("click", checkCard)
 
 function login(e){
     const userLogin = document.getElementById("login").value;
@@ -90,7 +44,8 @@ function login(e){
         return false;
     } 
     e.preventDefault();
-    closeLogin();
+    close(document.querySelector(".login"));
     setIconProfile();
+    changeDrop()
 }
 loginBtn.addEventListener("click", login);

@@ -1,4 +1,4 @@
-import {closeRegister, closeDrop, closeLogin} from "./togglers";
+import {closeDrop, close} from "./togglers";
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".header__nav");
 
@@ -11,9 +11,9 @@ const nav = document.querySelector(".header__nav");
         const line1 = document.querySelector(".burger__item1");
         const line2 = document.querySelector(".burger__item2");
         const line3 = document.querySelector(".burger__item3");
-        closeRegister();
+        close(document.querySelector(".register"));
         closeDrop();
-        closeLogin();
+        close(document.querySelector(".login"));
         document.body.style.overflowY = "hidden";
         menu.classList.add("header__menu_active");
         logo.classList.add("header__logo_active");
