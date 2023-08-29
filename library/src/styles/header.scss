@@ -103,6 +103,15 @@
             height: 100%;
         }
     }
+    .icon_registred{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-white;
+        padding: 5px;
+        border-radius: 50%;
+        @include textStyle($secont-font, $text, 20px, 400, $primary-color);
+    }
     .burger{
         display: none;
         @media screen and (max-width: 1024px){

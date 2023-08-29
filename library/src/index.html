@@ -139,7 +139,7 @@
                     </nav>
                     <div class="header__icons">
                         <div class="icon">
-                            <img src="icon_profile.svg" alt="icon avatar">
+                            <img id="iconProfile" src="icon_profile.svg" alt="icon avatar">
                         </div>
                         <div class="burger">
                             <span class="burger__item burger__item1"></span>
@@ -340,8 +340,8 @@
                             <form action="#" class="digital__form">
                                 <div class="digital-form__inner">
                                     <h4 class="digital-form__title">Brooklyn Public Library</h4>
-                                    <input class="digital-form__input" type="text" placeholder="Reader's name" required pattern="[a-zA-Z\-]*">
-                                    <input class="digital-form__input" type="text" placeholder="Card number" required pattern="[0-9]*">
+                                    <input id="readersName" class="digital-form__input" type="text" placeholder="Reader's name" required pattern="[a-zA-Z\-]*">
+                                    <input id="readeersCard" class="digital-form__input" type="text" placeholder="Card number" required pattern="[0-9a-fA-F]*">
                                 </div>
                                 <button class="digital-form__btn">Check the card</button>
                                 <div class="digital__icons">

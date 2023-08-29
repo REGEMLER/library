@@ -82,6 +82,42 @@
     .digital__icons{
         display: none;
     }
+    .digital__icons_active{
+        width: 100%;
+        margin: 15px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        .digital__icon{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .digital-icon__title{
+                @include textStyle($secont-font, $subtitle, 20px, 400, $color-black);
+                letter-spacing: 0.4px;
+                text-transform: capitalize;
+                text-align: center;
+            }
+            .digital-icon__img{
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .digital-icon__number{
+                @include textStyle($secont-font, $small-text, 20px, 400, $color-black);
+                letter-spacing: 0.2px;
+                text-transform: capitalize;
+                text-align: center;
+            }
+        }
+    }
 }
 
 .digital__getcard{
