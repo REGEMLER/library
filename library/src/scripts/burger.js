@@ -44,7 +44,6 @@ const nav = document.querySelector(".header__nav");
     } else {
         return
     }
-
  }
 
  burger.addEventListener("click", showMenu);

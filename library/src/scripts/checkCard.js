@@ -1,4 +1,5 @@
 const checkCardBtn = document.querySelector(".digital-form__btn");
+
 function checkCard(e){
     const name = localStorage.getItem('firstName');
     const cardNumber = localStorage.getItem('cardNumber');

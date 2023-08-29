@@ -30,11 +30,9 @@ function handler(e){
             } else {
                 setBook(item, 2, index);
             }
-
         })
     }
 }
-
 radios.addEventListener("click", handler);
 
 window.addEventListener('scroll', function() {

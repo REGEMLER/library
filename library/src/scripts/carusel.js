@@ -23,7 +23,7 @@ function setClassArrow(name, pagination){
     pagination.checked = true;
 }
 
-function AR(){
+function onArrowRight(){
     if(carusel.classList.contains("right")){
         return;
     }
@@ -50,7 +50,7 @@ function AR(){
     }
 }
 
-function AL(){
+function onArrowLeft(){
     if(carusel.classList.contains("left")){
         return;
     }
@@ -77,7 +77,7 @@ function AL(){
     }
 }
 
-function handler(e){
+function onPagination(e){
     if(e.target.name === "about__radio"){
         setEnable();
         arrowLeft.classList.remove("about__arrow_passive");
@@ -116,6 +116,6 @@ function handler(e){
     }
 }
 
-pagination.addEventListener("click", handler);
-arrowRight.addEventListener("click", AR);
-arrowLeft.addEventListener("click", AL);
+pagination.addEventListener("click", onPagination);
+arrowRight.addEventListener("click", onArrowRight);
+arrowLeft.addEventListener("click", onArrowLeft);
