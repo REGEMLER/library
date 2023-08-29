@@ -1,47 +1,19 @@
+import {showRegister, closeRegister, showDrop, closeDrop, showLogin, closeLogin} from "./togglers";
 const profile = document.querySelector(".icon");
 const dropMenu = document.querySelector(".drop");
 const register = document.querySelector(".register");
 const login = document.querySelector(".login");
-const wrapper = document.querySelector(".wrapper");
 const digital = document.querySelector(".digital-getcard__btns");
-
-let isVisibleDrop = false; 
-let isVisibleRegister = false; 
-let isVisibleLogin = false; 
-
-function showDrop(){
-    dropMenu.classList.add("active");
-    isVisibleDrop = true;
-}
-
-function closeDrop(){
-    dropMenu.classList.remove("active");
-    isVisibleDrop = false;
-}
 
 function onProfile(e){
     e.stopPropagation();
-    if(isVisibleDrop){
+    if(dropMenu.classList.contains("active")){
         closeDrop();
     } else {
         showDrop();
     }
 }
 profile.addEventListener("click", onProfile);
-
-function showLogin(){
-    login.classList.add("active");
-    wrapper.classList.add("blur");
-    document.body.style.overflowY = "hidden";
-    isVisibleLogin = true;
-}
-
-function closeLogin(){
-    login.classList.remove("active");
-    wrapper.classList.remove("blur");
-    document.body.style.overflowY = "";
-    isVisibleLogin = false;
-}
 
 function loginHandler(e){
     e.stopPropagation();
@@ -55,20 +27,6 @@ function loginHandler(e){
     }
 }
 login.addEventListener("click", loginHandler);
-
-function showRegister(){
-    register.classList.add("active");
-    wrapper.classList.add("blur");
-    document.body.style.overflowY = "hidden";
-    isVisibleRegister = true;
-}
-
-function closeRegister(){
-    register.classList.remove("active");
-    wrapper.classList.remove("blur");
-    document.body.style.overflowY = "";
-    isVisibleRegister = false;
-}
 
 function onDrop(e){
     e.stopPropagation();
@@ -109,13 +67,13 @@ function digitalHandler(e){
 digital.addEventListener("click", digitalHandler);
 
 function bodyHandler(e){
-    if(isVisibleDrop){
+    if(dropMenu.classList.contains("active")){
         closeDrop();
     }
-    if(isVisibleRegister){
+    if(register.classList.contains("active")){
      closeRegister()
     }
-    if(isVisibleLogin){
+    if(login.classList.contains("active")){
         closeLogin()
     }
 }
