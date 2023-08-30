@@ -4,7 +4,9 @@ export function setIconProfile(cardNumber){
     const {firstName, lastName}  = currentUser;
     const icon = document.querySelector(".header__icons .icon");
     const img = document.getElementById("iconProfile");
-    img.style.display = "none";
+    if(img){
+        img.style.display = "none";
+    }
     icon.textContent = firstName.slice(0, 1).toUpperCase() + lastName.slice(0, 1).toUpperCase(); 
     icon.classList.add("icon_registred");
     icon.setAttribute("title", `${firstName} ${lastName}`)

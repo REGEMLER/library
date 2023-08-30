@@ -1,4 +1,4 @@
-export function changeDrop(){
+export function changeDrop(cardNumber){
     const drop = document.querySelector(".drop");
     const title = drop.querySelector(".drop__title");
     const drop1 = drop.querySelector(".drop__item1");
@@ -10,7 +10,6 @@ export function changeDrop(){
         drop2.textContent = "Register";
     } else{
         drop.classList.add("logined");
-        const cardNumber = localStorage.getItem('cardNumber');
         title.textContent = cardNumber;
         drop1.textContent = "My profile";
         drop2.textContent = "Log Out";

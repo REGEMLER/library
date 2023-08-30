@@ -1,9 +1,10 @@
 import { close } from "./togglers";
 import { setIconProfile, createCardNumber, getUsers } from "./helpers";
 import { changeDrop } from "./changeDrop";
+import { changeDigitals } from "./checkCard";
 
 export function registerHandler(e){
-    let oldUsers = getUsers();
+    const oldUsers = getUsers();
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const email = document.getElementById("email").value;
@@ -19,8 +20,8 @@ export function registerHandler(e){
         return false;
     } 
     e.preventDefault();
-    let cardNumber = createCardNumber();
-    let newUser = {
+    const cardNumber = createCardNumber();
+    const newUser = {
         firstName,
         lastName,
         email,
@@ -30,8 +31,8 @@ export function registerHandler(e){
         books : [],
         bonuses : Math.floor(Math.random() * 9999),
     }
-    let newUsers = [...oldUsers, newUser];
-    let lsnewUsers = JSON.stringify(newUsers);
+    const newUsers = [...oldUsers, newUser];
+    const lsnewUsers = JSON.stringify(newUsers);
     localStorage.setItem("users", lsnewUsers);
     close(document.querySelector(".register"));
     console.log(lsnewUsers)
@@ -54,13 +55,29 @@ export function loginHandler(e){
         alert("Incorrect data!");
         return false;
     }
-    const {password, cardNumber}  = currentUser;
+    let {password, cardNumber, firstName, lastName, visits, bonuses, books, email}  = currentUser;
     if(userPassword !== password){
         alert("Incorrect password!");
         return false;
     } 
     e.preventDefault();
+    const newVisits = Number(visits) + 1;
+    const newUser = {
+        firstName,
+        lastName,
+        email,
+        password,
+        cardNumber,
+        visits : newVisits,
+        books : [],
+        bonuses : Math.floor(Math.random() * 9999),
+    }
+    const oldUsers = users.filter(item => item.cardNumber !== cardNumber);
+    const newUsers = [...oldUsers, newUser];
+    const lsnewUsers = JSON.stringify(newUsers);
+    localStorage.setItem("users", lsnewUsers);
     close(document.querySelector(".login"));
     setIconProfile(cardNumber);
-    changeDrop()
+    changeDigitals(cardNumber, firstName, lastName, newVisits, bonuses, books);
+    changeDrop(cardNumber)
 }
