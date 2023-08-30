@@ -1,12 +1,13 @@
-export function setIconProfile(){
+export function setIconProfile(cardNumber){
+    const users = getUsers();
+    const currentUser = users.find(item => item.cardNumber == cardNumber);
+    const {firstName, lastName}  = currentUser;
     const icon = document.querySelector(".header__icons .icon");
     const img = document.getElementById("iconProfile");
     img.style.display = "none";
-    const name = localStorage.getItem('firstName');
-    const surname = localStorage.getItem('lastName');
-    icon.textContent = name.slice(0, 1).toUpperCase() + surname.slice(0, 1).toUpperCase(); 
+    icon.textContent = firstName.slice(0, 1).toUpperCase() + lastName.slice(0, 1).toUpperCase(); 
     icon.classList.add("icon_registred");
-    icon.setAttribute("title", `${name} ${surname}`)
+    icon.setAttribute("title", `${firstName} ${lastName}`)
 }
 
 export function returnIconProfile(){
@@ -24,4 +25,15 @@ export function createCardNumber(){
         result += SYMBOLS[number];
     }
     return result; 
+}
+
+export function getUsers(){
+    let oldUsers = null;
+    let users = null;
+    let LSusers = localStorage.getItem("users");
+    if(LSusers){
+        users = JSON.parse(LSusers); 
+    }
+    oldUsers = users ?  users : [];
+    return oldUsers;
 }

@@ -15,6 +15,8 @@ function setBook(book, group, number){
     const img = card.querySelector(`.favorites-card__img img`);
     img.src = book.link; 
     img.alt = book.alt; 
+    const btn = card.querySelector(`.favorites-card__btn`);
+    btn.id = book.id;
     card.classList.add("animated");
     setTimeout(()=>{
         card.classList.remove("animated");
