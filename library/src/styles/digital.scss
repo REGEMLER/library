@@ -168,11 +168,12 @@
                 background-color: $primary-color;
             }
         }
-        .digital__btn_passive{
-            position: relative;
-            z-index: -1;
-            visibility: hidden;
-            opacity: 0;
-        }
     }
+}
+
+.digital__btn_passive{
+    position: relative;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
 }

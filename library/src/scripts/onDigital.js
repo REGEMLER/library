@@ -1,4 +1,4 @@
-import {show, close} from "./togglers";
+import {show} from "./togglers";
 
 const digital = document.querySelector(".digital-getcard__btns");
 function digitalHandler(e){
@@ -8,7 +8,11 @@ function digitalHandler(e){
     }
     if(e.target.classList.contains("digital__btn2")){
         e.stopPropagation();
-        show(document.querySelector(".login"));
+        if(e.target.classList.contains("logined")){
+            show(document.querySelector(".profile"));
+        } else {
+            show(document.querySelector(".login"));
+        }
     }
 }
 digital.addEventListener("click", digitalHandler);

@@ -9,3 +9,6 @@ import './scripts/onBody.js';
 import './scripts/onDigital.js';
 import './scripts/onIconProfile.js';
 import './scripts/onDrop.js';
+import './scripts/onBook.js';
+import './scripts/onBuy.js';
+import './scripts/onProfileModal.js';

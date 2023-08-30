@@ -1,7 +1,7 @@
 @import "variables";
 
 .buy{
-    width: 650px;
+    width: 640px;
     margin: 0 auto;
     min-height: 540px;
     position: fixed;
@@ -110,6 +110,12 @@
         transition: all linear .4s;
         &:hover{
             background-color: $primary-color;
+        }
+        &:disabled{
+            background-color: $color-gray;
+            color: $color-dark; 
+            opacity: 0.5;
+            cursor: auto;
         }
     }
 }

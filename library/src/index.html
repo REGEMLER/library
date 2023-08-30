@@ -63,17 +63,17 @@
                 <div class="profile__icon">
                     <p class="profile-icon__title">Visits</p>
                     <div class="profile-icon__img"><img src="Union.svg" alt="profile-icon"></div>
-                    <p class="profile-icon__number">23</p>
+                    <p id="profileVisits" class="profile-icon__number">23</p>
                 </div>
                 <div class="profile__icon">
                     <p class="profile-icon__title">Bonuses</p>
                     <div class="profile-icon__img"><img src="Star.svg" alt="profile-icon"></div>
-                    <p class="profile-icon__number">1240</p>
+                    <p id="profileBonuses" class="profile-icon__number">1240</p>
                 </div>
                 <div class="profile__icon">
                     <p class="profile-icon__title">Books</p>
                     <div class="profile-icon__img"><img src="book.svg" alt="profile-icon"></div>
-                    <p class="profile-icon__number">2</p>
+                    <p id="profileBooks" class="profile-icon__number">2</p>
                 </div>
             </div>
             <h2 class="profile__subtitle">Rented books</h2>
@@ -99,19 +99,19 @@
             <div class="buy__content">
                 <form class="buy__form" action="#">
                     <label for="bankCard" class="buy__item">Bank card number</label>
-                    <input class="buy__input" id="bankCard" type="text" value="" required>
+                    <input class="buy__input" id="bankCard" type="text" minlength="16" value="" required>
                     <label for="bankCode1" class="buy__item">Expiration code</label>
-                    <input class="buy__input-inline" id="bankCode1" type="text" value="" required>
-                    <input class="buy__input-inline" id="bankCode2" type="text" value="" required>
+                    <input class="buy__input-inline" id="bankCode1" type="text" maxlength="2" value="" required>
+                    <input class="buy__input-inline" id="bankCode2" type="text" maxlength="2" value="" required>
                     <label for="cvc" class="buy__item">CVC</label>
-                    <input class="buy__input-inline" id="cvc" type="text" value="" required>
+                    <input class="buy__input-inline" id="cvc" type="text" value="" minlength="3" maxlength="3" required>
                     <label for="bankName" class="buy__item">Cardholder name</label>
                     <input class="buy__input" id="bankName" type="text" value="" required>
                     <label for="bankPostal" class="buy__item">Postal code</label>
                     <input class="buy__input" id="bankPostal" type="text" value="" required>
                     <label for="bankCity" class="buy__item">City / Town</label>
                     <input class="buy__input" id="bankCity" type="text" value="" required>
-                    <button class="buy__btn">Buy</button>
+                    <button disabled class="buy__btn">Buy</button>
                 </form>
                 <p class="buy__price">$ 25.00</p>
                 <p class="buy__info">If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.</p>

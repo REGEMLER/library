@@ -10,7 +10,7 @@ function showCard( cardNumber, firstName, lastName, visits, bonuses, books ){
     const icons = document.querySelector(".digital__icons");
     const btn = document.querySelector(".digital-form__btn");
     icons.classList.add("digital__icons_active");
-    btn.style.display = "none";
+    btn.classList.add("digital__btn_passive");
     digitalVisits.textContent = visits;
     digitalBonuses.textContent = bonuses;
     digitalBooks.textContent = books.length;
@@ -26,7 +26,7 @@ export function hideCard(){
     const icons = document.querySelector(".digital__icons");
     const btn = document.querySelector(".digital-form__btn");
     icons.classList.remove("digital__icons_active");
-    btn.style.display = "block";
+    btn.classList.remove("digital__btn_passive");
     readersName.value = "";
     readersCard.value = "";
     readersName.disabled = false;

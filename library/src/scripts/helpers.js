@@ -39,3 +39,26 @@ export function getUsers(){
     oldUsers = users ?  users : [];
     return oldUsers;
 }
+
+export function setProfile( cardNumber, firstName, lastName, visits, bonuses, books ){
+    const logo = document.querySelector(".profile__logo");
+    const name = document.querySelector(".profile__name");
+    const profileVisits = document.getElementById("profileVisits");
+    const profileBonuses = document.getElementById("profileBonuses");
+    const profileBooks = document.getElementById("profileBooks");
+    const profileNumber = document.querySelector(".profile__number"); 
+    const booksList = document.querySelector(".profile__books"); 
+
+    logo.textContent = `${firstName.slice(0,1).toUpperCase()}${lastName.slice(0,1).toUpperCase()}`;
+    name.textContent = `${firstName} ${lastName}`;
+    profileVisits.textContent = visits;
+    profileBonuses.textContent = bonuses;
+    profileBooks.textContent = books.length; 
+    profileNumber.textContent = cardNumber;
+    books.forEach(item => {
+        const li = document.createElement("LI");
+        li.textContent = item;
+        li.classList.add("profile__book");
+        booksList.append(li);
+    })
+}

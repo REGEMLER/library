@@ -1,5 +1,5 @@
 import { close } from "./togglers";
-import { setIconProfile, createCardNumber, getUsers } from "./helpers";
+import { setIconProfile, createCardNumber, getUsers, setProfile } from "./helpers";
 import { changeDrop } from "./changeDrop";
 import { changeDigitals } from "./checkCard";
 
@@ -30,6 +30,7 @@ export function registerHandler(e){
         visits : 1,
         books : [],
         bonuses : Math.floor(Math.random() * 9999),
+        hasBankCard: false 
     }
     const newUsers = [...oldUsers, newUser];
     const lsnewUsers = JSON.stringify(newUsers);
@@ -55,7 +56,7 @@ export function loginHandler(e){
         alert("Incorrect data!");
         return false;
     }
-    let {password, cardNumber, firstName, lastName, visits, bonuses, books, email}  = currentUser;
+    let {password, cardNumber, firstName, lastName, visits, bonuses, books, email, hasBankCard}  = currentUser;
     if(userPassword !== password){
         alert("Incorrect password!");
         return false;
@@ -69,8 +70,9 @@ export function loginHandler(e){
         password,
         cardNumber,
         visits : newVisits,
-        books : [],
-        bonuses : Math.floor(Math.random() * 9999),
+        books,
+        bonuses,
+        hasBankCard 
     }
     const oldUsers = users.filter(item => item.cardNumber !== cardNumber);
     const newUsers = [...oldUsers, newUser];
@@ -79,5 +81,6 @@ export function loginHandler(e){
     close(document.querySelector(".login"));
     setIconProfile(cardNumber);
     changeDigitals(cardNumber, firstName, lastName, newVisits, bonuses, books);
+    setProfile(cardNumber, firstName, lastName, newVisits, bonuses, books);
     changeDrop(cardNumber)
 }
