@@ -40,6 +40,13 @@ export function getUsers(){
     return oldUsers;
 }
 
+export function setUsers(users, cardNumber, newUser){
+    const oldUsers = users.filter(item => item.cardNumber !== cardNumber);
+    const newUsers = [...oldUsers, newUser];
+    const lsnewUsers = JSON.stringify(newUsers);
+    localStorage.setItem("users", lsnewUsers);
+}
+
 export function setProfile( cardNumber, firstName, lastName, visits, bonuses, books ){
     const logo = document.querySelector(".profile__logo");
     const name = document.querySelector(".profile__name");

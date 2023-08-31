@@ -1,5 +1,5 @@
 import seasons from "./seasons";
-import { getUsers, setProfile } from "./helpers";
+import { getUsers, setProfile, setUsers } from "./helpers";
 import { show } from "./togglers";
 import { changeDigitals } from "./checkCard";
 
@@ -30,7 +30,6 @@ function onBook(e){
         const currentBtn = document.getElementById(currentBook.id);
         currentBtn.textContent = "Own";
         currentBtn.disabled = true;
-        console.log(currentBtn)
         const newBook = `${currentBook.title}, ${currentBook.subtitle.replace("By", "")}`
         const newBooks = [...books, newBook];
         const newUser = {
@@ -44,10 +43,7 @@ function onBook(e){
             bonuses,
             hasBankCard
         }
-        const oldUsers = users.filter(item => item.cardNumber !== cardNumber);
-        const newUsers = [...oldUsers, newUser];
-        const lsnewUsers = JSON.stringify(newUsers);
-        localStorage.setItem("users", lsnewUsers);
+        setUsers(users, cardNumber, newUser);
         changeDigitals(cardNumber, firstName, lastName, visits, bonuses, newBooks);
         setProfile(cardNumber, firstName, lastName, visits, bonuses, newBooks);
     }

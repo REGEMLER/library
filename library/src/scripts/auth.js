@@ -1,5 +1,5 @@
 import { close } from "./togglers";
-import { setIconProfile, createCardNumber, getUsers, setProfile, setBooksBtns, changeDrop } from "./helpers";
+import { setIconProfile, createCardNumber, getUsers, setProfile, setBooksBtns, changeDrop, setUsers } from "./helpers";
 import { changeDigitals } from "./checkCard";
 
 export function registerHandler(e){
@@ -35,7 +35,6 @@ export function registerHandler(e){
     const lsnewUsers = JSON.stringify(newUsers);
     localStorage.setItem("users", lsnewUsers);
     close(document.querySelector(".register"));
-    console.log(lsnewUsers)
     setIconProfile(cardNumber);
 }
 
@@ -73,14 +72,11 @@ export function loginHandler(e){
         bonuses,
         hasBankCard 
     }
-    const oldUsers = users.filter(item => item.cardNumber !== cardNumber);
-    const newUsers = [...oldUsers, newUser];
-    const lsnewUsers = JSON.stringify(newUsers);
-    localStorage.setItem("users", lsnewUsers);
-    close(document.querySelector(".login"));
+    setUsers(users, cardNumber, newUser);
     setIconProfile(cardNumber);
     changeDigitals(cardNumber, firstName, lastName, newVisits, bonuses, books);
     setProfile(cardNumber, firstName, lastName, newVisits, bonuses, books);
     changeDrop(cardNumber);
-    setBooksBtns()
+    setBooksBtns();
+    close(document.querySelector(".login"));
 }

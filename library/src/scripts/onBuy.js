@@ -1,5 +1,5 @@
 import {close} from "./togglers";
-import { getUsers } from "./helpers";
+import { getUsers, setUsers } from "./helpers";
 
 const bankCard = document.getElementById("bankCard");
 const bankCode1 = document.getElementById("bankCode1");
@@ -62,10 +62,7 @@ function buyCard(e){
         bonuses,
         hasBankCard : true
     }
-    const oldUsers = users.filter(item => item.cardNumber !== cardNumber);
-    const newUsers = [...oldUsers, newUser];
-    const lsnewUsers = JSON.stringify(newUsers);
-    localStorage.setItem("users", lsnewUsers);
+    setUsers(users, cardNumber, newUser);
     close(buy);
 }
 btn.addEventListener("click", buyCard);
