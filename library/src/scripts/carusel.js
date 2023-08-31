@@ -28,7 +28,7 @@ function onArrowRight(){
         return;
     }
     setEnable();
-    arrowLeft.addEventListener("click", AL);
+    arrowLeft.addEventListener("click", onArrowLeft);
     arrowLeft.classList.remove("about__arrow_passive");
     if(carusel.classList.contains("left")){
         setClassArrow("two", pagination2);
@@ -44,7 +44,7 @@ function onArrowRight(){
     }
     if(carusel.classList.contains("four")){
         arrowRight.classList.add("about__arrow_passive");
-        arrowRight.removeEventListener("click", AR);
+        arrowRight.removeEventListener("click", onArrowRight);
         setClassArrow("right", pagination5);
         return;
     }
@@ -56,7 +56,7 @@ function onArrowLeft(){
     }
     setEnable();
     arrowRight.classList.remove("about__arrow_passive");
-    arrowRight.addEventListener("click", AR);
+    arrowRight.addEventListener("click", onArrowRight);
     if(carusel.classList.contains("right")){
         setClassArrow("four", pagination4);
         return;
@@ -70,7 +70,7 @@ function onArrowLeft(){
         return;
     }
     if(carusel.classList.contains("two")){
-        arrowLeft.removeEventListener("click", AL);
+        arrowLeft.removeEventListener("click", onArrowLeft);
         arrowLeft.classList.add("about__arrow_passive");
         setClassArrow("left", pagination1);
         return;

@@ -34,8 +34,11 @@ export function registerHandler(e){
     const newUsers = [...oldUsers, newUser];
     const lsnewUsers = JSON.stringify(newUsers);
     localStorage.setItem("users", lsnewUsers);
-    close(document.querySelector(".register"));
     setIconProfile(cardNumber);
+    changeDigitals(cardNumber, firstName, lastName, 1, newUser.bonuses, newUser.books);
+    setProfile(cardNumber, firstName, lastName, 1, newUser.bonuses, newUser.books);
+    changeDrop(cardNumber);
+    close(document.querySelector(".register"));
 }
 
 export function loginHandler(e){
