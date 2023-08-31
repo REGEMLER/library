@@ -1,18 +1,22 @@
-import {show, close, closeDrop} from "./togglers";
-import { changeDrop } from "./changeDrop";
-import { returnIconProfile } from "./helpers";
+import {show, closeDrop} from "./togglers";
+import { returnIconProfile, setBooksBtns, changeDrop } from "./helpers";
 import { hideCard } from "./checkCard";
 
 const dropMenu = document.querySelector(".drop");
+
+function logOut(){
+    changeDrop();
+    returnIconProfile();
+    hideCard();
+    closeDrop();
+    setBooksBtns();
+}
 
 function onDrop(e){
     e.stopPropagation();
     if(dropMenu.classList.contains("logined")){
         if(e.target.classList.contains("drop__item2")){
-            changeDrop();
-            returnIconProfile();
-            hideCard();
-            closeDrop();
+            logOut()
             return;
         }
         if(e.target.classList.contains("drop__item1")){

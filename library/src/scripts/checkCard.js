@@ -65,11 +65,10 @@ function checkCard(e){
         return false;
     }
     const { cardNumber, firstName, lastName, visits, books, bonuses }  = currentUser;
-    let readersNameArr = readersName.value.split(" ");
-    // if( readersNameArr[0] !==firstName || readersNameArr[0] !==lastName ){
-    //     alert("Incorrect data!");
-    //     return false;
-    // }
+    if( readersName.value.toUpperCase() !== firstName.toUpperCase()){
+        alert("Incorrect name!");
+        return false;
+    }
     e.preventDefault();
     showCard( cardNumber, firstName, lastName, visits, bonuses, books );
     setTimeout(hideCard,10000)

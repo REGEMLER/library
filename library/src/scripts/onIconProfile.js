@@ -1,4 +1,4 @@
-import {show, close, closeDrop, showDrop} from "./togglers";
+import {closeDrop, showDrop} from "./togglers";
 
 const iconProfile = document.querySelector(".icon");
 

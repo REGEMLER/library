@@ -69,8 +69,3 @@ function buyCard(e){
     close(buy);
 }
 btn.addEventListener("click", buyCard);
-
-// const form = document.querySelector(".buy__form");
-// form.addEventListener("submit", (e) => {
-
-// })

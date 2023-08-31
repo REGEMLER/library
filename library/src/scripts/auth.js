@@ -1,6 +1,5 @@
 import { close } from "./togglers";
-import { setIconProfile, createCardNumber, getUsers, setProfile } from "./helpers";
-import { changeDrop } from "./changeDrop";
+import { setIconProfile, createCardNumber, getUsers, setProfile, setBooksBtns, changeDrop } from "./helpers";
 import { changeDigitals } from "./checkCard";
 
 export function registerHandler(e){
@@ -82,5 +81,6 @@ export function loginHandler(e){
     setIconProfile(cardNumber);
     changeDigitals(cardNumber, firstName, lastName, newVisits, bonuses, books);
     setProfile(cardNumber, firstName, lastName, newVisits, bonuses, books);
-    changeDrop(cardNumber)
+    changeDrop(cardNumber);
+    setBooksBtns()
 }

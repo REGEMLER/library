@@ -55,10 +55,60 @@ export function setProfile( cardNumber, firstName, lastName, visits, bonuses, bo
     profileBonuses.textContent = bonuses;
     profileBooks.textContent = books.length; 
     profileNumber.textContent = cardNumber;
+    booksList.innerHTML = ""; 
     books.forEach(item => {
         const li = document.createElement("LI");
         li.textContent = item;
         li.classList.add("profile__book");
         booksList.append(li);
     })
+}
+
+export function setBooksBtns(){
+    const btns = [...document.querySelectorAll(".favorites-card__btn")];
+    const titles = [...document.querySelectorAll(".favorites-card__title")];
+    titles.forEach((item, index) => {
+        const isBought = setBtn(item.textContent);
+        if(isBought){
+            btns[index].textContent = "Own";
+            btns[index].disabled = true;
+        } else {
+            btns[index].textContent = "Buy";
+            btns[index].disabled = false;
+        }
+    })
+}
+
+export function setBtn(title){
+    const drop = document.querySelector(".drop");
+    if(!drop.classList.contains("logined")){
+        return false; 
+    }
+    const cardNumber = drop.querySelector(".drop__title").textContent;
+    const users = getUsers();
+    const currentUser = users.find(item => item.cardNumber == cardNumber);
+    let { books }  = currentUser;
+    let titles = books.map(item => {
+        let index = item.indexOf(",");
+        return item.slice(0, index); 
+    })
+    return titles.includes(title); 
+}
+
+export function changeDrop(cardNumber){
+    const drop = document.querySelector(".drop");
+    const title = drop.querySelector(".drop__title");
+    const drop1 = drop.querySelector(".drop__item1");
+    const drop2 = drop.querySelector(".drop__item2");
+    if(drop.classList.contains("logined")){
+        drop.classList.remove("logined");
+        title.textContent = "Profile";
+        drop1.textContent = "Log In";
+        drop2.textContent = "Register";
+    } else{
+        drop.classList.add("logined");
+        title.textContent = cardNumber;
+        drop1.textContent = "My profile";
+        drop2.textContent = "Log Out";
+    }
 }
