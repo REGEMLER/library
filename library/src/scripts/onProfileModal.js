@@ -9,7 +9,14 @@ function onProfileModale(e){
     }
     if(e.target.closest(".profile__cube")){
         const number = profile.querySelector(".profile__number").textContent;
-        navigator.clipboard.writeText(number);
+        navigator.clipboard.writeText(number)
+        .then(()=>{
+            const copy = profile.querySelector(".profile__cube-copy");
+            copy.classList.add("profile__cube-copy_active");
+            setTimeout(()=> {
+                copy.classList.remove("profile__cube-copy_active");
+            },2000)
+        });
     }
 }
 profile.addEventListener("click", onProfileModale);

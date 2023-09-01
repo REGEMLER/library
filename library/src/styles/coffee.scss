@@ -121,6 +121,9 @@
     .coffee-card__item_right{
         justify-content: flex-end;
         gap: 220px;
+        @media screen and (max-width: 450px){
+            gap: 120px;
+        } 
     }
 }
 
