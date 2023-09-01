@@ -4,6 +4,7 @@
     width: 600px;
     margin: 0 auto;
     min-height: 400px;
+    max-height: 500px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -116,6 +117,7 @@
     .profile__books{
         margin: 30px auto 40px auto;
         display: flex;
+        max-height: 100px;
         flex-direction: column;
         gap: 10px;
         overflow-y: scroll;

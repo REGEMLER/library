@@ -56,6 +56,7 @@ export function changeDigitals(cardNumber, firstName, lastName, visits, bonuses,
 }
 
 function checkCard(e){
+    e.preventDefault();
     const readersName = document.getElementById("readersName");
     const readersCard = document.getElementById("readeersCard");
     const users = getUsers();
@@ -69,7 +70,6 @@ function checkCard(e){
         alert("Incorrect name!");
         return false;
     }
-    e.preventDefault();
     showCard( cardNumber, firstName, lastName, visits, bonuses, books );
     setTimeout(hideCard,10000)
 }

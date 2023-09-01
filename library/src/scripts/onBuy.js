@@ -6,7 +6,7 @@ const bankCode1 = document.getElementById("bankCode1");
 const bankCode2 = document.getElementById("bankCode2");
 const cvc = document.getElementById("cvc");
 const bankName = document.getElementById("bankName");
-const bankPostal = document.getElementById("bankCard");
+const bankPostal = document.getElementById("bankPostal");
 const bankCity = document.getElementById("bankCity");
 const btn = document.querySelector(".buy__btn");
 
@@ -20,8 +20,14 @@ function onBuy(e){
 buy.addEventListener("click", onBuy);
 
 function validator(){
-    let bankCardValue = bankCard.value.replace(/ /g,''); 
-    console.log( bankCardValue.length)
+    let bankCardValueOld = String(bankCard.value);
+    let bankCardValueArr = bankCardValueOld.split("");
+    for(let i = 4; i< bankCardValueArr.length + 1; i = i + 5){
+        if(bankCardValueArr[i] === " "){
+            bankCardValueArr[i] = "";
+        }
+    }
+    let bankCardValue = bankCardValueArr.join("");
     if(
         bankCardValue.length === 16 
         &&  bankCode1.value.length <= 2 
@@ -35,12 +41,15 @@ function validator(){
         
     ){
         btn.disabled = false; 
+    } else {
+        btn.disabled = true; 
     }
 }
 bankCard.addEventListener("change", validator);
 bankCode1.addEventListener("change", validator);
 bankCode2.addEventListener("change", validator);
 cvc.addEventListener("change", validator);
+bankName.addEventListener("change", validator);
 bankPostal.addEventListener("change", validator);
 bankCity.addEventListener("change", validator);
 
